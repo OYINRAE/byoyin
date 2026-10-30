@@ -69,8 +69,8 @@ h2 em{font-style:italic;font-weight:300;display:block}
 /* hero */
 .hero{position:relative;background:var(--black);color:var(--cream);display:flex;align-items:center;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 80% 40%,rgba(255,255,255,.07),transparent 70%)}
-.hero .wrap{position:relative;width:100%;padding-block:124px 56px}
-@media (max-width:760px){.hero .wrap{padding-block:104px 44px}}
+.hero .wrap{position:relative;width:100%;padding-block:108px 36px}
+@media (max-width:760px){.hero .wrap{padding-block:92px 28px}}
 .kicker{display:flex;align-items:center;gap:16px;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .kicker::before{content:"";width:40px;height:1px;background:rgba(255,255,255,.6)}
 .hero h1{font-family:var(--display);font-weight:300;font-size:clamp(50px,7.6vw,96px);line-height:.95;margin:0;letter-spacing:-.005em}
@@ -98,7 +98,7 @@ section.block#booking{padding-top:24px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:760px;margin:56px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stats > .stat{padding:22px 12px;text-align:center;min-width:0}
 .stats > .stat + .stat{border-left:1px solid var(--line)}
-.stats .k{font-size:9px;letter-spacing:.42em;text-transform:uppercase;opacity:.6;line-height:1.4}
+.stats .k{font-size:10px;font-weight:300;letter-spacing:.5em;text-transform:uppercase;opacity:.75;line-height:1.4}
 .stats > .stat.wide{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
 .addr-note{text-align:center;margin-top:14px;font-size:12px;opacity:.65}
 .stats .v.hours b{font-weight:700}
@@ -168,8 +168,8 @@ section.block#booking{padding-top:24px}
 @media (max-width:560px){#policies .acc{grid-template-columns:1fr}#policies .acc .ans{padding:0 22px 22px}}
 /* ticker */
 .ticker{background:#000;color:#fff;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.14)}
-.ticker .track{display:inline-flex;animation:tick 40s linear infinite;padding-block:14px}
-.ticker span{font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;padding-inline:22px}
+.ticker .track{display:inline-flex;animation:tick 40s linear infinite;padding-block:7px}
+.ticker span{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;padding-inline:22px}
 .ticker span.dot{padding:0;opacity:.5;letter-spacing:0}
 .ticker.in-about{margin:48px calc(50% - 50vw) 0;border-top:0}
 .about .stats{margin-top:0;border-top:0}
@@ -210,6 +210,8 @@ section.block.about{padding-top:28px}
 .tile2{padding:10px}
 .tile2 span{font-size:8px;letter-spacing:.2em;padding:4px 8px}
 /* book */
+.book .book-note{margin-top:28px}
+.book .book-note + .thanks{margin-top:10px}
 .thanks{text-align:center;margin-top:40px;font-family:var(--display);font-style:italic;font-size:24px;color:var(--ink)}
 .book .thanks + .row{margin-top:18px}
 .contact-num{text-align:center;margin-top:36px;font-size:14px;color:var(--ink);user-select:all}
@@ -273,7 +275,7 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
 <main id="home">
   <section class="hero">
     <div class="wrap">
-      <h1>Book your<em>appointment.</em></h1>
+      <h1>Book your<em>appointment with me.</em></h1>
     </div>
       <div class="ticker in-hero" aria-hidden="true"><div class="track">
         <span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span>
@@ -285,7 +287,6 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
       <div class="stats">
         <div class="stat wide"><div class="k">Opening hours</div><div class="v hours"><span><b>Mon–Fri</b> · from 6pm</span><span><b>Sat</b> · 8am–4pm</span><span><b>Sun</b> · closed</span></div></div>
       </div>
-      <p class="addr-note">Full address will be sent 24 hours before your appointment</p>
     </div>
   </section>
 
@@ -367,6 +368,7 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
       <div class="card">
         <a class="btn" href="https://byoyinco.as.me/schedule/9212460a/appointment/91748953/calendar/13873277?utm_source=website" target="_blank" rel="noopener">View services &amp; book</a>
       </div>
+      <p class="addr-note book-note">Full address will be sent 24 hours before your appointment</p>
       <p class="thanks">Thank you for choosing BYOYIN 🤍</p>
       <div class="row">
         <a class="btn" href="https://wa.me/447958115266" target="_blank" rel="noopener">WhatsApp</a>
