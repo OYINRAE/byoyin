@@ -260,6 +260,21 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
   footer .wrap{grid-template-columns:1fr auto;gap:24px 20px}
   footer .ig{grid-column:2}
 }
+
+.chooser{max-width:560px!important}
+.pick-label{font-size:10px!important;letter-spacing:.5em;text-transform:uppercase;opacity:.75}
+.seg{display:inline-flex;margin-top:18px;border:1px solid #000}
+.seg button{font:inherit;font-size:11px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;padding:14px 40px;background:#fff;color:#000;border:0;cursor:pointer;transition:background .2s,color .2s}
+.seg button[aria-selected="true"]{background:#000;color:#fff}
+.cats{margin-top:28px;text-align:left;border-top:1px solid #000}
+.cat{display:flex;justify-content:space-between;align-items:center;padding:16px 6px;border-bottom:1px solid rgba(0,0,0,.12);font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:16px;font-weight:600;color:#000;text-decoration:none;transition:background .2s,padding .2s}
+.cat:hover{background:#f4f4f4;padding-left:14px}
+.cat .arr{font-weight:400}
+.demo-note{margin-top:18px!important;font-size:12px!important;color:#6b6b6b!important}
+.faq-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.faq-body{min-width:0}
+.faq-cta .btn{flex:1 1 0;min-width:140px}
+@media (max-width:640px){.seg button{padding:12px 26px}}
 </style>
 
 </head>
@@ -328,7 +343,7 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
         <p class="eyebrow">FAQ</p>
         <h2 class="split-h">Good to <em>know</em></h2>
       </div></aside>
-      <ul class="yn2">
+      <div class="faq-body"><ul class="yn2">
         <li><span class="q">Free on-street parking</span><span class="dash" aria-hidden="true"></span><span class="a yes">Yes</span></li>
         <li><span class="q">Bring your own hair</span><span class="dash" aria-hidden="true"></span><span class="a yes">Yes</span></li>
         <li><span class="q">Bridal and full-day event packages</span><span class="dash" aria-hidden="true"></span><span class="a yes">Yes</span></li>
@@ -339,7 +354,7 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
         <li><span class="q">Half wig installs</span><span class="dash" aria-hidden="true"></span><span class="a">No</span></li>
         <li><span class="q">Colouring services</span><span class="dash" aria-hidden="true"></span><span class="a">No</span></li>
         <li><span class="q">Plus ones</span><span class="dash" aria-hidden="true"></span><span class="a">No</span></li>
-      </ul>
+      </ul></div>
     </div>
   </section>
 
@@ -365,8 +380,21 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
       <p class="eyebrow">Booking</p>
       <h2>Book your <em>appointment</em></h2>
       <p class="intro">By booking with BYOYIN, you acknowledge, understand and agree to the booking terms above. These have been designed to ensure a smooth and fair experience for every client. Not following these terms may jeopardise your appointment.</p>
-      <div class="card">
-        <a class="btn" href="https://byoyinco.as.me/schedule/9212460a/appointment/91748953/calendar/13873277?utm_source=website" target="_blank" rel="noopener">View services &amp; book</a>
+      <div class="card chooser">
+        <p class="pick-label">Choose appointment type</p>
+        <div class="seg" role="tablist" aria-label="Choose hair or nails">
+          <button type="button" role="tab" id="tab-hair" aria-selected="true" aria-controls="g-hair">Hair</button>
+          <button type="button" role="tab" id="tab-nails" aria-selected="false" aria-controls="g-nails">Nails</button>
+        </div>
+        <div class="cats" id="g-hair" role="tabpanel" aria-labelledby="tab-hair">
+          <a class="cat" href="https://byoyinco.as.me/schedule/9212460a/category/Sleeks?utm_source=website" target="_blank" rel="noopener"><span>Sleeks</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="cat" href="https://byoyinco.as.me/schedule/9212460a/category/Sew%2520Ins?utm_source=website" target="_blank" rel="noopener"><span>Sew Ins</span><span class="arr" aria-hidden="true">→</span></a>
+        </div>
+        <div class="cats" id="g-nails" role="tabpanel" aria-labelledby="tab-nails" hidden>
+          <a class="cat" href="https://byoyinco.as.me/schedule/9212460a/category/Acrylics?utm_source=website" target="_blank" rel="noopener"><span>Acrylics</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="cat" href="https://byoyinco.as.me/schedule/9212460a/category/Builder%2520%2526%2520Hard%2520Gel?utm_source=website" target="_blank" rel="noopener"><span>Builder &amp; Hard Gel</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="cat" href="https://byoyinco.as.me/schedule/9212460a/category/Nail%2520Maintenance/appointment/100480591/calendar/13873277?utm_source=website" target="_blank" rel="noopener"><span>Nail Maintenance</span><span class="arr" aria-hidden="true">→</span></a>
+        </div>
       </div>
       <p class="addr-note book-note">Full address will be sent 24 hours before your appointment</p>
       <p class="thanks">Thank you for choosing BYOYIN 🤍</p>
@@ -403,5 +431,9 @@ document.querySelectorAll("#policies details").forEach(function(d,_,all){
 })();
 </script>
 
+<script>
+function pick(g){document.querySelectorAll(".seg button").forEach(function(o){var on=o.getAttribute("aria-controls")==="g-"+g;o.setAttribute("aria-selected",on);document.getElementById(o.getAttribute("aria-controls")).hidden=!on;});}
+document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){pick(b.getAttribute("aria-controls").slice(2));});});
+</script>
 </body>
 </html>
