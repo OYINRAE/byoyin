@@ -154,7 +154,8 @@ section.block#booking{padding-top:24px}
 #policies .fees td.p{font-weight:700}
 @media (max-width:560px){#policies .acc .ans{padding-right:0}}
 /* policy cards */
-#policies .acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:0;align-items:start}
+#policies .acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:0;align-items:stretch}
+#policies .acc details:not([open]) > summary{height:100%;box-sizing:border-box}
 #policies .acc details{background:#fff;border-radius:18px;border:0;box-shadow:inset 0 0 0 1px #000;transition:background .2s}
 #policies .acc details:hover{background:#f6f6f6}
 #policies .acc details:last-child:nth-child(odd){grid-column:1/-1}
