@@ -213,6 +213,9 @@ section.block.about{padding-top:10px}
 section.block.meet{padding-block:32px 8px}
 .meet .split-body p{margin:0;font-size:16px;font-weight:400;line-height:1.8;color:var(--ink);max-width:60ch}
 @media (min-width:861px){.meet .split-body{padding-top:30px}section.block.meet{padding-bottom:56px}}
+.meet-body{display:flex;align-items:center;gap:clamp(24px,4vw,48px)}
+.meet-photo{border-radius:50%;flex:0 0 auto;width:clamp(200px,22vw,260px);height:auto;aspect-ratio:1;object-fit:cover;display:block}
+@media (max-width:860px){.meet-body{flex-direction:column;align-items:flex-start}.meet-photo{width:220px}}
 /* book */
 .book .book-note{margin-top:28px}
 .book .book-note + .thanks{margin-top:10px}
@@ -315,7 +318,8 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
         <p class="eyebrow">Meet your artist</p>
         <h2 class="split-h">The face <em>behind</em> BYOYIN</h2>
       </div></aside>
-      <div class="split-body">
+      <div class="split-body meet-body">
+        <img class="meet-photo" src="oyin.jpg" alt="Oyin, the hair and nail artist behind BYOYIN" width="640" height="640" loading="lazy">
         <p>I do hair and nails from my space in Leagrave, Luton &ndash; sleeks and sew-ins, acrylics, builder and hard gel. Every appointment is done by me from start to finish, so you always know who you&rsquo;re booking.</p>
       </div>
     </div>
