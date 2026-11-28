@@ -50,6 +50,9 @@ h2 em{font-style:italic;font-weight:300;display:block}
 .btn.outline{background:transparent;color:var(--espresso)}
 .btn.outline:hover{background:var(--espresso);color:#fff}
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero{padding-top:calc(114px + env(safe-area-inset-top,0px))}
+@media (max-width:760px){.hero{padding-top:calc(102px + env(safe-area-inset-top,0px))}}
 /* header */
 .top .top-btns{justify-self:end;display:flex;gap:10px}
 .top .btn.outline.shop{border:1px solid #000}
@@ -313,9 +316,7 @@ footer .legal{border-top:1px solid rgba(0,0,0,.18);text-align:center;padding-blo
 
 <main id="home">
   <section class="hero">
-    <div class="wrap">
-      <h1>Welcome to <em>my booking site.</em></h1>
-    </div>
+    <h1 class="sr-only">BYOYIN &ndash; hair and nails in Leagrave, Luton</h1>
       <div class="ticker in-hero" aria-hidden="true"><div class="track">
         <span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span><span>Leagrave, Luton</span><span class="dot">✦</span><span>Instagram @byoyin.co</span><span class="dot">✦</span><span>Availability released 20th of every month</span><span class="dot">✦</span>
       </div></div>
